@@ -6,12 +6,16 @@
     <title>Todo List - Nabila Priliani Agustin</title>
 
     <!-- CSS Exsternal -->
-     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="css\style.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body>
     <!-- Header Content -->
     <header>
-        <h1>Todo List - Nabila Priliani Agustin</h1>
+        <h1 class="text-2xl font-bold pb-10">Todo List - Nabila Priliani Agustin</h1>
     </header>
 
     <!-- Main Content -->
@@ -20,19 +24,41 @@
         <section>
             <form>
                 <!-- Todo Input -->
-            <input type="text" id="todo-input" placeholder="Enter a new todo item">
+            <input class="border p-1 rounded pb" type="text" id="todo-input" placeholder="Enter a new todo item">
 
             <!-- Date Input -->
-            <input type="date" id="todo-date" placeholder="Enter due date">
+            <input class="border p-1 rounded" type="date" id="todo-date" placeholder="Enter due date">
             </form>
             
             <!-- Add Button -->
-            <button type="button">Add Todo</button>
+            <button class="bg-green-300 p-1 border rounded haver:bg-green-300" onclick="addTodo()" type="button">Add Todo</button>
+        </section>
+
+        <!-- Action Section -->
+        <section class="flex pt-2 justify-between">
+            <!-- Clear All Button -->
+             <button class="border rounded p-1 bg-green-300" onclick="deleteAllTodos()">Clear All Todos</button>
+
+            <!-- Filter Options -->
+            <button class="border rounded p-1 bg-green-300">Filter Todos</button>
+        </section>
+
+        <!-- Todo List Section -->
+        <section class="pt-2">
+            <header>
+                <h1 class="text-2xl font-semibold">List of Todos</h1>
+            </header>
+            <ul class="pt-2" id="todo-List">
+                <!-- Todo Items Will Be Dynamically Added Here -->
+                <li>No todos available</li>
+            </ul>
         </section>
     </main>
 
     <!-- Footer Content -->
-    <footer></footer>
+    <footer class="pt-10">
+        <p class="text-center text-gray-400">ⓒ 2026 Bila's Todo Apps</p>
+    </footer>
 
     <!-- Javascript External -->
     <script src="js/script.js"></script>
